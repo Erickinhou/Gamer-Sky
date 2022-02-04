@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
+import Head from "next/head";
 import imageUrlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
 import styles from "../../styles/Post.module.scss";
@@ -18,6 +19,10 @@ export const Post = ({ title, body, image, author }) => {
 
   return (
     <div>
+      <Head>
+        <title>Gamer Sky - {title}</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <div className={styles.main}>
         <div className={styles.header}>
           <div className={styles.textWrapper}>
@@ -53,7 +58,7 @@ export const getServerSideProps = async (pageContext) => {
   }
 
   const query = encodeURIComponent(
-    `*[ _type == "post" && slug.current == "${pageSlug}" ]{body, title, mainImage, author->{name} }`
+    `*[ _type == "post" && slug.current == "${pageSlug}" ]{body[]{ ..., asset->{ ..., "_key": _id } }, title, mainImage, author->{name} }`
   );
   const url = `https://ejsram2b.api.sanity.io/v1/data/query/production?query=${query}`;
 
@@ -66,7 +71,6 @@ export const getServerSideProps = async (pageContext) => {
     };
   }
 
-  console.log("post", post);
   return {
     props: {
       body: post.body,
