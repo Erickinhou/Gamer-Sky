@@ -1,5 +1,6 @@
 .main {
   margin: auto;
+  overflow-x: hidden;
 }
 
 .mainImage {
@@ -17,7 +18,7 @@
 }
 
 .header {
-  overflow: hidden;
+  overflow-x: hidden;
   display: flex;
   align-items: center;
   margin-top: 10px;
@@ -27,9 +28,13 @@
     text-align: center;
     h1 {
       font-size: 40px;
+      background: linear-gradient(#e45233, #f97e0a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     h2 {
       font-size: 14px;
+      color: #d1d5db;
     }
   }
   .imageWrapper {
