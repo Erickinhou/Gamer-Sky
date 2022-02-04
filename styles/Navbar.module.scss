@@ -1,0 +1,21 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  align-items: center;
+  margin-top: 5px;
+  img {
+    padding-right: 100px !important;
+  }
+  ul {
+    width: auto;
+    transform: translate(-35%, 0%);
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    li {
+      margin-left: 20px;
+      text-decoration: none;
+    }
+  }
+}
