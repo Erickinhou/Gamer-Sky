@@ -13,7 +13,6 @@ export const Post = ({ title, body, image, author }) => {
       projectId: "ejsram2b",
       dataset: "production",
     });
-    console.log(imageUrl);
     setImageUrl(imgBuilder.image(image).url());
   }, [image]);
 

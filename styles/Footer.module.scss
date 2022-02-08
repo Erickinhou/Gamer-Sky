@@ -1,0 +1,19 @@
+.footerWrapper {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0f172a;
+  margin-top: 40px;
+  div {
+    display: flex;
+    padding: 15px;
+    .icon {
+      cursor: pointer;
+      margin: 0 20px;
+      &:hover {
+        color: #e45233;
+      }
+    }
+  }
+}
