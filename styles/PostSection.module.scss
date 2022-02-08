@@ -2,16 +2,43 @@
   max-width: 750px;
   margin: auto;
   margin-top: 40px;
+  transition: all 0.5s;
   height: 200px;
   display: flex;
   background-color: #0f172a;
   border-radius: 30px;
   cursor: pointer;
   overflow: hidden;
+  &:hover .textWrapper .backgroundPrimaryAnimation {
+    transform: rotate(0deg);
+  }
+  &:hover {
+    transform: scale(1.1);
+  }
   .textWrapper {
-    margin-top: 5%;
+    position: relative;
     width: 40%;
+    z-index: 5;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    & > h2 {
+      margin: 0;
+    }
+    & > .backgroundPrimaryAnimation {
+      width: 100%;
+      height: 200%;
+      position: absolute;
+      top: -100%;
+      left: 0;
+      z-index: -1;
+      transform-origin: bottom left;
+      transform: rotate(180deg);
+      transition: all 0.5s;
+      background: linear-gradient(#e45233, #f97e0a 95%);
+    }
   }
 
   .imageWrapper {

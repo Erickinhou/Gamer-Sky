@@ -32,6 +32,7 @@ const PostSection = ({ posts }) => {
             />
           </div>
           <div className={styles.textWrapper}>
+            <div className={styles.backgroundPrimaryAnimation} />
             <h2>{title}</h2>
             <span>author: {author.name}</span>
           </div>
