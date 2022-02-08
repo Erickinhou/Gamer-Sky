@@ -59,7 +59,7 @@ export const getServerSideProps = async (pageContext) => {
   const query = encodeURIComponent(
     `*[ _type == "post" && slug.current == "${pageSlug}" ]{body[]{ ..., asset->{ ..., "_key": _id } }, title, mainImage, author->{name} }`
   );
-  const url = `https://ejsram2b.api.sanity.io/v1/data/query/production?query=${query}`;
+  const url = `https://${process.env.NEXT_PUBLIC_SANITY_ID}.api.sanity.io/v1/data/query/production?query=${query}`;
 
   const result = await fetch(url).then((res) => res.json());
   const post = result.result[0];

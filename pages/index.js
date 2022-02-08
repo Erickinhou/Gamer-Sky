@@ -7,7 +7,7 @@ export async function getStaticProps() {
   const query = encodeURIComponent(
     `*[ _type == "post" ]{ title, mainImage, slug, author->{name} }`
   );
-  const url = `https://ejsram2b.api.sanity.io/v1/data/query/production?query=${query}`;
+  const url = `https://${process.env.NEXT_PUBLIC_SANITY_ID}.api.sanity.io/v1/data/query/production?query=${query}`;
 
   const result = await fetch(url).then((res) => res.json());
   const posts = result.result;
