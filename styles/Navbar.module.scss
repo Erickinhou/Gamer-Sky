@@ -18,5 +18,10 @@
       margin-left: 20px;
       text-decoration: none;
     }
+    li:hover {
+      background: linear-gradient(#e45233, #f97e0a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   }
 }
